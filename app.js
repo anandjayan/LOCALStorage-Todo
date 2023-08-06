@@ -12,6 +12,14 @@ window.addEventListener('load' , () =>{
 
     newTodoForm.addEventListener('submit', e=>{
         e.preventDefault();
+
+        const todoContent = e.target.elements.content.value.trim();
+        if (todoContent === '') {
+            
+            alert('Empty task, Bruh!!');
+            return; 
+        }
+        
         const todo = {
             content: e.target.elements.content.value,
             category: e.target.elements.category.value,
